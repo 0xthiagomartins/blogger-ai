@@ -13,15 +13,24 @@ class LawyerBlogger(BaseBlogger):
                 "target_clients",
                 "blog_topic",
                 "blog_length",
+                "references",
             ],
             template=(
                 "You are a professional content writer for {business_name}. "
                 "The firm specializes in {scope}. They offer services such as {services}. "
                 "Their target clients are {target_clients}. "
                 "{base_template} "
+                "{reference_section}"
                 "Write a blog post titled '{blog_topic}' with a length of {blog_length}."
             ),
         )
+
+        reference_section = ""
+        if self.references:
+            reference_section = (
+                "Use the following references to inform your writing:\n"
+                + "\n".join(self.references)
+            )
 
         formatted_prompt = prompt.format(
             business_name=self.config.business_name,
@@ -31,6 +40,7 @@ class LawyerBlogger(BaseBlogger):
             blog_topic=self.config.blog_topic,
             blog_length=self.config.blog_length,
             base_template=self.base_template,
+            reference_section=reference_section,
         )
 
         response = self.llm.generate_content(formatted_prompt)

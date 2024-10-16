@@ -1,5 +1,5 @@
-from dataclasses import dataclass
-from typing import List
+from dataclasses import dataclass, field
+from typing import List, Optional
 
 
 @dataclass
@@ -10,3 +10,4 @@ class BaseConfig:
     target_clients: List[str]
     blog_topic: str
     blog_length: str
+    references: Optional[List[str]] = field(default=None)

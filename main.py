@@ -19,6 +19,8 @@ def generate_blog():
         f.write(content)
     print(f"Blog post generated at {output_path}")
 
+    # Optionally handle dynamic references here if needed
+
 
 if __name__ == "__main__":
     generate_blog()
