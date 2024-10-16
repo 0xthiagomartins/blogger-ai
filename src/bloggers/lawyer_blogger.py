@@ -1,5 +1,5 @@
 from .base_blogger import BaseBlogger
-from config.lawyer_config import lawyer_config
+from src.config.lawyer_config import lawyer_config
 from langchain.prompts import PromptTemplate
 
 

@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
-from config.base_config import BaseConfig
-from typing import Optional  # Imported Optional
+from src.config.base_config import BaseConfig
+from typing import Optional
 
 
 class BaseBlogger(ABC):

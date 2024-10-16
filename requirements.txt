@@ -1,3 +1,6 @@
-langchain
-openai
 pytest
+pytest-cov
+langchain
+langchain-core
+langchain-google-genai
+python-dotenv
